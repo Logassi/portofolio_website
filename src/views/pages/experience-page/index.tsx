@@ -3,10 +3,8 @@ import React from "react";
 
 export default function ExperiencesPageView() {
   return (
-    <div>
-      <main>
-        <ComingSoon />
-      </main>
-    </div>
+    <main>
+      <ComingSoon />
+    </main>
   );
 }

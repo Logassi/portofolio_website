@@ -46,7 +46,9 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
+  --background: oklch(1 0 0)
+  /* --background: linear-gradient(to bottom, #4a69bd, #0c2461); */
+  /* --background:  #0c2461; */
   --foreground: oklch(0.147 0.004 49.25);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.147 0.004 49.25);
@@ -121,7 +123,8 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    background:  linear-gradient(to bottom, #4a69bd, #0c2461);
+    @apply   text-foreground;
   }
 }
 
@@ -137,21 +140,34 @@ footer {
 main,
 nav,
 footer {
-  @apply max-w-6xl mx-auto my-12;
+  /* @apply max-w-6xl mx-auto my-12; */
+  @apply w-full my-12 sm:px-6 lg:px-8;
 }
 
-p {
+/* p {
   @apply mt-2;
+} */
+
+p {
+  @apply mt-4 text-lg leading-relaxed;
 }
+
 
 a {
   @apply tracking-tight p-2;
 }
 
-h1 {
+/* h1 {
   @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
 }
 
 h2 {
   @apply scroll-m-20 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0;
+} */
+
+h1 {
+  @apply text-5xl font-bold tracking-tighter sm:text-6xl lg:text-7xl;
+}
+h2 {
+  @apply text-4xl font-semibold sm:text-5xl lg:text-6xl;
 }

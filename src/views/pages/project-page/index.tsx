@@ -3,10 +3,8 @@ import React from "react";
 
 export default function ProjectsPageView() {
   return (
-    <div>
-      <main>
-        <ComingSoon />
-      </main>
-    </div>
+    <main>
+      <ComingSoon />
+    </main>
   );
 }

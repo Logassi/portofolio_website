@@ -2,12 +2,8 @@ import React from "react";
 
 export default function ComingSoon() {
   return (
-    <div>
-      <main>
-        <div className="flex items-center text-center w-auto h-dvh bg-slate-500 justify-center">
-          <h1>Coming Soon...</h1>
-        </div>
-      </main>
-    </div>
+    <article className="flex items-center justify-center text-center w-full h-dvh bg-slate-500 ">
+      <h1>Coming Soon...</h1>
+    </article>
   );
 }
