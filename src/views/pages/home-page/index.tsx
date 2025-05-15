@@ -1,5 +1,25 @@
 "use client";
 import { useState, useEffect } from "react";
+import {
+  SiNestjs,
+  SiExpress,
+  SiNextdotjs,
+  SiReact,
+  SiTailwindcss,
+  SiPostgresql,
+  SiMysql,
+  SiMongodb,
+  SiTypescript,
+  SiJavascript,
+  SiJest,
+  SiVercel,
+  SiNodedotjs,
+  SiRedis,
+  SiDocker,
+  SiSocketdotio,
+  SiSupabase,
+  SiPrisma,
+} from "react-icons/si";
 
 export default function HomePageView() {
   const techStack = [
@@ -39,32 +59,68 @@ export default function HomePageView() {
     const interval = setInterval(() => {
       setCurrentStack((prev) => (prev + 1) % techStack.length);
     }, 1500);
-
     return () => clearInterval(interval);
   }, []);
 
   return (
     <main>
       <article className="flex items-center justify-center text-center w-full h-dvh">
-        <div className="flex flex-col gap-2 text-2xl">
-          <h1>Hi, I'm Lomona Gagasi Pasaribu</h1>
-          <h2>A Fullstack Website Developer</h2>
+        <div className="flex flex-row items-center gap-8 text-left">
+          {/* Text on the left */}
+          <div className="flex flex-col gap-2 text-2xl">
+            <h1>Hi, I am Lomona Gagasi Pasaribu</h1>
+            <h2>A Fullstack Website Developer</h2>
+            <p>
+              "I'm a full-stack web developer specializing in backend
+              development using NestJS and Express.js, with strong fundamentals
+              in Next.js for frontend development."
+            </p>
+          </div>
+
+          {/* Image on the right */}
+          <img
+            src="/2-removebg.png"
+            alt="Portrait of Lomona Gagasi Pasaribu, Fullstack Web Developer"
+            className="w-95 h-95 rounded-full object-cover shadow-lg"
+          />
         </div>
       </article>
 
-      <article className="text-center w-full h-dvh">
-        <div>
-          "I'm a full-stack web developer specializing in backend development
-          using NestJS and Express.js, with strong fundamentals in Next.js for
-          frontend development."
-        </div>
-
-        {/* Dynamic Tech Stack */}
-        <div className="mt-4 text-lg font-semibold">
-          Tech Stack I use: <br />
-          <span className="text-[#f6b93b] transition-opacity duration-500">
-            {techStack[currentStack]}
-          </span>
+      {/* Scrolling Icons with Hover Pause */}
+      <article className="w-full bg-black py-6 overflow-hidden">
+        <div className="whitespace-nowrap">
+          <div className="inline-flex animate-marquee space-x-12 text-white text-center px-4">
+            {[...Array(4)].flatMap((_, loopIndex) =>
+              [
+                { icon: <SiNestjs />, label: "NestJS" },
+                { icon: <SiExpress />, label: "Express.js" },
+                { icon: <SiNextdotjs />, label: "Next.js" },
+                { icon: <SiNodedotjs />, label: "Node.js" },
+                { icon: <SiReact />, label: "React.js" },
+                { icon: <SiTailwindcss />, label: "Tailwind CSS" },
+                { icon: <SiTypescript />, label: "TypeScript" },
+                { icon: <SiJavascript />, label: "JavaScript" },
+                { icon: <SiPostgresql />, label: "PostgreSQL" },
+                { icon: <SiMysql />, label: "MySQL" },
+                { icon: <SiMongodb />, label: "MongoDB" },
+                { icon: <SiSupabase />, label: "Supabase" },
+                { icon: <SiPrisma />, label: "Prisma" },
+                { icon: <SiJest />, label: "Jest" },
+                { icon: <SiVercel />, label: "Vercel" },
+                { icon: <SiRedis />, label: "Redis" },
+                { icon: <SiDocker />, label: "Docker" },
+                { icon: <SiSocketdotio />, label: "Socket.io" },
+              ].map((item, index) => (
+                <div
+                  key={`${item.label}-${loopIndex}-${index}`}
+                  className="flex flex-col items-center justify-center text-3xl"
+                >
+                  {item.icon}
+                  <span className="text-xs mt-1">{item.label}</span>
+                </div>
+              ))
+            )}
+          </div>
         </div>
       </article>
 
@@ -108,6 +164,7 @@ export default function HomePageView() {
 
       <article className="text-center w-full h-dvh">Contact</article>
 
+      {/* Resume Download Button */}
       <div className="fixed bottom-4 right-4 flex items-center justify-center">
         <div className="relative group">
           <span className="absolute bottom-14 right-0 bg-black text-white text-xs px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">

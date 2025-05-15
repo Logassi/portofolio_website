@@ -171,3 +171,16 @@ h1 {
 h2 {
   @apply text-4xl font-semibold sm:text-5xl lg:text-6xl;
 }
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
