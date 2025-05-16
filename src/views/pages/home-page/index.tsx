@@ -20,60 +20,57 @@ import {
   SiSupabase,
   SiPrisma,
 } from "react-icons/si";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function HomePageView() {
-  const techStack = [
-    "Programming Languages: JavaScript, TypeScript",
-    "Frontend: Next.js, React.js, Tailwind CSS",
-    "Backend: NestJS, Express.js, Prisma ORM",
-    "Databases: MySQL, PostgreSQL, MongoDB, Supabase",
-    "Deployment: Vercel",
-    "Testing: Jest",
-  ];
-
   const workExperiences = [
     {
       company: "PT. Minilemon Nusantara",
       position: "Backend Developer Intern",
+      link: "https://minilemon.co.id/about",
       description:
         "Developed and maintained scalable backend services using NestJS and Node.js. Optimized PostgreSQL databases with Prisma ORM, built and tested RESTful APIs, and integrated Supabase Storage. Implemented unit tests with Jest and collaborated using Git and GitHub for version control.",
+      image: "/pt-minilemon-nusantara.png", // Add your image path here
     },
     {
       company: "PT. Gunung Raja Paksi",
       position: "Supply Chain Management Intern",
+      link: "https://gunungrajapaksi.com/about",
       description:
         "Managed supply chain operations, ensuring item availability and updating inventory. Created daily reports to identify areas for improvement in the supply chain process.",
+      image: "/grp-office.png", // Add your image path here
     },
     {
       company: "PT. Gunung Raja Paksi",
       position: "Enterprise Resource Planning (ERP) Analyst Intern",
+      link: "https://gunungrajapaksi.com/about",
       description:
         "Trained production employees on SAP product management after completing company-provided training. Ensured employees achieved proficiency in SAP usage. Assisted in managing SAP Production, monitoring weight bridge data and resolving data errors.",
+      image: "/grp-office.png", // Add your image path here
     },
   ];
 
-  const [currentStack, setCurrentStack] = useState(0);
   const [selectedExperienceIndex, setSelectedExperienceIndex] = useState(0);
+  const [mobileDetailVisible, setMobileDetailVisible] = useState(false);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentStack((prev) => (prev + 1) % techStack.length);
-    }, 1500);
-    return () => clearInterval(interval);
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <main>
       <article className="flex items-center justify-center text-center w-full h-dvh">
-        <div className="flex flex-row items-center gap-8 text-left">
+        <div className="flex flex-col md:flex-row items-center gap-8 text-left w-full max-w-6xl px-4">
           {/* Text on the left */}
-          <div className="flex flex-col gap-2 text-2xl">
-            <h1>Hi, I am Lomona Gagasi Pasaribu</h1>
-            <h2>A Fullstack Website Developer</h2>
-            <p>
-              "I'm a full-stack web developer specializing in backend
-              development using NestJS and Express.js, with strong fundamentals
-              in Next.js for frontend development."
+          <div className="flex flex-col gap-2 text-xl md:text-2xl w-full md:w-auto">
+            <h1 className="text-2xl md:text-3xl font-bold">
+              Hi, I am Lomona Gagasi Pasaribu
+            </h1>
+            <h2 className="text-xl md:text-2xl">
+              A Fullstack Website Developer
+            </h2>
+            <p className="text-base md:text-lg">
+              "...specializing in backend development using NestJS and
+              Express.js, with strong fundamentals in Next.js for frontend
+              development."
             </p>
           </div>
 
@@ -81,15 +78,15 @@ export default function HomePageView() {
           <img
             src="/2-removebg.png"
             alt="Portrait of Lomona Gagasi Pasaribu, Fullstack Web Developer"
-            className="w-95 h-95 rounded-full object-cover shadow-lg"
+            className="order-first md:order-none w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full object-cover shadow-lg mb-4 md:mb-0"
           />
         </div>
       </article>
 
       {/* Scrolling Icons with Hover Pause */}
-      <article className="w-full bg-black py-6 overflow-hidden">
-        <div className="whitespace-nowrap">
-          <div className="inline-flex animate-marquee space-x-12 text-white text-center px-4">
+      <article className="w-full bg-black py-6 overflow-hidden rounded-2xl">
+        <div className="whitespace-nowrap ">
+          <div className="inline-flex animate-marquee space-x-12 text-white text-center px-4 ">
             {[...Array(4)].flatMap((_, loopIndex) =>
               [
                 { icon: <SiNestjs />, label: "NestJS" },
@@ -124,45 +121,123 @@ export default function HomePageView() {
         </div>
       </article>
 
-      <article className="text-center w-full h-dvh">Projects</article>
+      <article className="text-center w-full h-dvh">
+        <h2 className="mb-4 text-3xl font-semibold text-white">Projects</h2>
+      </article>
 
       {/* Work Experience Section */}
-      <article className="text-center w-full h-dvh flex flex-col justify-start items-center">
-        <h2 className="mb-4 text-3xl font-semibold text-white">
+      <article className="w-full min-h-screen py-12 px-8">
+        <h2 className="mb-12 text-3xl font-semibold text-white text-center">
           Work Experiences
         </h2>
 
-        <div className="flex w-full h-full">
-          {/* Left Side - Company Names */}
-          <div className="w-3/5 flex flex-col items-center justify-center p-4">
-            {workExperiences.map((experience, index) => (
-              <div
-                key={index}
-                className={`text-white text-lg font-semibold mb-2 p-3 w-4/5 rounded-lg shadow-lg cursor-pointer ${
-                  selectedExperienceIndex === index
-                    ? "bg-blue-900"
-                    : "bg-blue-700"
-                }`}
-                onMouseEnter={() => setSelectedExperienceIndex(index)}
-              >
-                {experience.company}
-              </div>
-            ))}
+        <div className="flex w-full h-full max-w-6xl mx-auto">
+          {/* Left Side - Company Names (Always visible) */}
+          <div className="w-full md:w-2/5 pr-0 md:pr-8 border-0 md:border-r border-gray-600">
+            <h3 className="text-white text-xl font-bold mb-6">Companies</h3>
+            <div className="space-y-4">
+              {workExperiences.map((experience, index) => (
+                <div
+                  key={index}
+                  className={`text-left p-4 rounded-lg cursor-pointer transition-all ${
+                    selectedExperienceIndex === index
+                      ? "bg-blue-900 text-white"
+                      : "text-gray-400 hover:text-white hover:bg-gray-800"
+                  }`}
+                  onMouseEnter={() => {
+                    if (window.innerWidth >= 768) {
+                      setSelectedExperienceIndex(index);
+                    }
+                  }}
+                  onClick={() => {
+                    setSelectedExperienceIndex(index);
+                    if (window.innerWidth < 768) {
+                      setMobileDetailVisible(true);
+                    }
+                  }}
+                >
+                  <h4 className="font-semibold">{experience.company}</h4>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Right Side - Job Position & Description */}
-          <div className="w-2/5 flex flex-col items-center justify-center p-4 transition-all duration-300">
-            <h2 className="text-white text-lg font-semibold mb-2 p-3 w-4/5 bg-red-700 rounded-lg shadow-lg">
-              {workExperiences[selectedExperienceIndex].position}
-            </h2>
-            <p className="text-white text-sm w-4/5">
-              {workExperiences[selectedExperienceIndex].description}
-            </p>
+          {/* Right Side - Details (Hidden on mobile until tap) */}
+          {/* Desktop View (unchanged) */}
+          <div className="hidden md:block w-3/5 pl-8">
+            <div className="mb-8">
+              <h3 className="text-white text-xl font-bold mb-2">
+                {workExperiences[selectedExperienceIndex].position}
+              </h3>
+              <p className="text-gray-300">
+                {workExperiences[selectedExperienceIndex].description}
+              </p>
+            </div>
+            <div className="mt-8 bg-gray-800 rounded-lg p-4">
+              <div className="relative w-full h-64 bg-gray-700 rounded overflow-hidden">
+                <img
+                  src={workExperiences[selectedExperienceIndex].image}
+                  alt={workExperiences[selectedExperienceIndex].company}
+                  className="w-full h-full object-cover"
+                />
+                {!workExperiences[selectedExperienceIndex].image && (
+                  <div className="flex items-center justify-center w-full h-full text-gray-400">
+                    Company Image
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
+
+          {/* Mobile Detail Panel */}
+          <AnimatePresence>
+            {mobileDetailVisible && (
+              <motion.div
+                initial={{ x: "100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: "100%" }}
+                transition={{ type: "spring", damping: 25 }}
+                className="fixed inset-0 z-50 bg-gray-900 md:hidden p-6 overflow-y-auto"
+              >
+                <button
+                  onClick={() => setMobileDetailVisible(false)}
+                  className="absolute top-4 right-4 text-white text-2xl"
+                >
+                  &times;
+                </button>
+
+                <div className="mt-8">
+                  <h3 className="text-white text-xl font-bold mb-2">
+                    {workExperiences[selectedExperienceIndex].position}
+                  </h3>
+                  <p className="text-gray-300">
+                    {workExperiences[selectedExperienceIndex].description}
+                  </p>
+                </div>
+
+                <div className="mt-8 bg-gray-800 rounded-lg p-4">
+                  <div className="relative w-full h-64 bg-gray-700 rounded overflow-hidden">
+                    <img
+                      src={workExperiences[selectedExperienceIndex].image}
+                      alt={workExperiences[selectedExperienceIndex].company}
+                      className="w-full h-full object-cover"
+                    />
+                    {!workExperiences[selectedExperienceIndex].image && (
+                      <div className="flex items-center justify-center w-full h-full text-gray-400">
+                        Company Image
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </article>
 
-      <article className="text-center w-full h-dvh">Contact</article>
+      <article className="text-center w-full h-dvh">
+        <h2 className="mb-4 text-3xl font-semibold text-white">Contact</h2>
+      </article>
 
       {/* Resume Download Button */}
       <div className="fixed bottom-4 right-4 flex items-center justify-center">
