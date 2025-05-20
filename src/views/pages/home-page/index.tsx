@@ -16,11 +16,11 @@ export default function HomePageView() {
       {/* Scrolling Icons Tech Stacks */}
       <TechStacksIcons />
 
-      {/* Projects Section */}
-      <ProjectsSection />
-
       {/* Work Experience Section */}
       <WorkExperiencesSection />
+
+      {/* Projects Section */}
+      <ProjectsSection />
 
       {/* Contact Section */}
       {/* <ContactSection /> */}

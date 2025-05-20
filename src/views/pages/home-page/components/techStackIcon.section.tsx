@@ -17,6 +17,7 @@ import {
   SiSocketdotio,
   SiSupabase,
   SiPrisma,
+  SiRailway,
 } from "react-icons/si";
 
 export default function TechStacksIcons() {
@@ -41,6 +42,7 @@ export default function TechStacksIcons() {
               { icon: <SiPrisma />, label: "Prisma" },
               { icon: <SiJest />, label: "Jest" },
               { icon: <SiVercel />, label: "Vercel" },
+              { icon: <SiRailway />, label: "Railway" },
               { icon: <SiRedis />, label: "Redis" },
               { icon: <SiDocker />, label: "Docker" },
               { icon: <SiSocketdotio />, label: "Socket.io" },
