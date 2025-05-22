@@ -4,9 +4,9 @@ import ProjectSlugView from "@/views/pages/project-page-slug";
 export default async function Projects({
   params,
 }: {
-  params: ProjectSlugParams;
+  params: Promise<ProjectSlugParams>;
 }) {
-  const { slug } = params;
+  const { slug } = await params;
 
   return (
     <div>
