@@ -6,7 +6,7 @@ export default async function Projects({
 }: {
   params: ProjectSlugParams;
 }) {
-  const { slug } = await params;
+  const { slug } = params;
 
   return (
     <div>
