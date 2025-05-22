@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "slug": "portofolio-website",
+    "title": "Portofolio Website",
+    "description": "A personal portfolio website to showcase my projects and skills",
+    "images": ["/2-removebg.png", "/pt-minilemon-nusantara.png"],
+    "link": "https://lomona-gagasi-pasaribu.vercel.app/",
+    "github": "https://github.com/Logassi/portofolio_website",
+    "technologies": [
+      "Typescript",
+      "React",
+      "Next.js",
+      "Tailwind",
+      "Contentful CMS",
+      "Vercel"
+    ],
+    "features": [
+      "User authentication and profile management",
+      "Product listing with categories and filters",
+      "Shopping cart with quantity adjustment",
+      "Checkout with Stripe integration",
+      "Order tracking and order history"
+    ]
+  }
+]

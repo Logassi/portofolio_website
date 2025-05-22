@@ -1,27 +1,14 @@
-"use client";
 import Link from "next/link";
+import { Project } from "@/types/project";
 
-interface ProjectCardProps {
-  title: string;
-  description: string;
-  image: string;
-  link: string;
-  techStack?: string[];
-  github?: string;
-}
-
-export default function ProjectCard({
-  project,
-}: {
-  project: ProjectCardProps;
-}) {
+export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <Link href={project.link} passHref>
+    <Link href={`/projects/${project.slug}`} passHref>
       <div className="relative overflow-hidden group cursor-pointer h-64 rounded-lg shadow-lg">
         {/* Project Image */}
         <div className="absolute inset-0 transition-all duration-500 ease-in-out group-hover:-translate-x-full">
           <img
-            src={project.image}
+            src={project.images[0]}
             alt={project.title}
             className="w-full h-full object-cover"
           />

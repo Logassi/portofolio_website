@@ -4,9 +4,12 @@ import ProjectsSection from "./components/projects.section";
 import WorkExperiencesSection from "./components/workExperiences.section";
 import ContactSection from "./components/contact.section";
 import { ResumeButton } from "./components/resume.button";
+import { getAllProjects } from "@/lib/contentful";
 
-export default function HomePageView() {
+export default async function HomePageView() {
   // useEffect(() => {}, []);
+
+  // const projects = await getAllProjects();
 
   return (
     <main>

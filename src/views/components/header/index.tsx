@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react"; // Import icons from lucide-react
+import Image from "next/image";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,9 +20,9 @@ export default function Header() {
         </button>
 
         {/* Logo (Centered) */}
-        <a href="/" className="text-xl font-bold">
-          <img src="favicon.ico" alt="Logo" className="w-10" />
-        </a>
+        <Link href="/" className="text-xl font-bold">
+          <Image src="/favicon.ico" alt="Logo" width={40} height={40} />
+        </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6 absolute right-4">
