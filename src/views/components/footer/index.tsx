@@ -9,7 +9,7 @@ export default function Footer() {
           <span className="text-lg font-semibold">Lomona Gagasi Pasaribu</span>
 
           {/* Navigation Links */}
-          <div className="flex space-x-6 mt-4 md:mt-0">
+          {/* <div className="flex space-x-6 mt-4 md:mt-0">
             <a
               href="/projects"
               className="hover:text-gray-400 transition-colors"
@@ -28,10 +28,21 @@ export default function Footer() {
             >
               Contacts
             </a>
-          </div>
+          </div> */}
 
           {/* Social Media Icons */}
           <div className="flex space-x-4 mt-4 md:mt-0">
+            <a
+              href="https://wa.me/62895701188728"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/whatsapp-icon.svg"
+                alt="WhatsApp"
+                className="h-6 w-6 hover:opacity-80 transition-opacity"
+              />
+            </a>
             <a
               href="https://github.com/Logassi"
               target="_blank"

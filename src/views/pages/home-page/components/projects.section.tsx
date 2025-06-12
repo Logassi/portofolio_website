@@ -21,7 +21,7 @@ export default function ProjectsSection() {
         <div className="overflow-x-auto pb-6 scrollbar-hide">
           <div className="flex space-x-8 w-max">
             {(projects as Project[]).map((project) => (
-              <div key={project.id} className="w-72 flex-shrink-0">
+              <div key={project.id} className="w-100 flex-shrink-0">
                 <ProjectCard project={project} />
               </div>
             ))}
