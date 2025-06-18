@@ -13,7 +13,7 @@ export default function ProjectImagesSection({ images }: { images: string[] }) {
   }, [images.length]);
 
   return (
-    <section className="w-full max-w-4xl px-4 py-8 mx-auto text-white">
+    <section className="w-full max-w-7xl px-4 py-8 mx-auto text-white">
       <div className="relative w-full aspect-video overflow-hidden rounded-lg">
         {images.map((src, index) => (
           <Image
