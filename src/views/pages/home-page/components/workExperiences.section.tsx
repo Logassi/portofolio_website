@@ -7,9 +7,28 @@ export default function WorkExperiencesSection() {
 
   const workExperiences = [
     {
+      company: "PT. Bithealth Teknologi Pintar",
+      duration: "July 2025 - Present",
+      position: "Associate Software Engineer (Hybrid)",
+      link: "https://bithealth.co.id/",
+      description:
+        "Developed and maintained scalable backend services using Express.js and Node.js. Optimized PostgreSQL databases with Sequalize, built and tested RESTful APIs. Implemented unit tests with Mocha and collaborated using Git and GitHub for version control.",
+      // image: "/pt-bithealth-teknologi-pintar.png", // Add your image path here
+      image: "/bithealth-logo.jpg", // Add your image path here
+      skills: [
+        "JavaScript",
+        "Express.js",
+        "Node.js",
+        "PostgreSQL",
+        "Sequalize",
+        "Mocha",
+        "Sinon",
+      ],
+    },
+    {
       company: "PT. Minilemon Nusantara",
-      duration: "January 2025 - Present",
-      position: "Backend Developer Intern",
+      duration: "January 2025 - May 2025",
+      position: "Backend Developer Intern (Online)",
       link: "https://minilemon.co.id/about",
       description:
         "Developed and maintained scalable backend services using NestJS and Node.js. Optimized PostgreSQL databases with Prisma ORM, built and tested RESTful APIs, and integrated Supabase Storage. Implemented unit tests with Jest and collaborated using Git and GitHub for version control.",
@@ -29,21 +48,21 @@ export default function WorkExperiencesSection() {
     {
       company: "PT. Gunung Raja Paksi",
       duration: "March 2022 - July 2022",
-      position: "Supply Chain Management Intern",
+      position: "Supply Chain Management Intern (On-site)",
       link: "https://gunungrajapaksi.com/about",
       description:
         "Managed supply chain operations, ensuring item availability and updating inventory. Created daily reports to identify areas for improvement in the supply chain process.",
-      image: "/grp-office.png", // Add your image path here
+      image: "/gunung-raja-paksi.jpg", // Add your image path here
       skills: ["SAP", "Microsoft Excel", "Microsoft Word"],
     },
     {
       company: "PT. Gunung Raja Paksi",
       duration: "December 2021 - February 2022",
-      position: "Enterprise Resource Planning (ERP) Analyst Intern",
+      position: "Enterprise Resource Planning (ERP) Analyst Intern (On-site)",
       link: "https://gunungrajapaksi.com/about",
       description:
         "Trained production employees on SAP product management after completing company-provided training. Ensured employees achieved proficiency in SAP usage. Assisted in managing SAP Production, monitoring weight bridge data and resolving data errors.",
-      image: "/grp-office.png", // Add your image path here
+      image: "/gunung-raja-paksi-2.jpg", // Add your image path here
       skills: ["SAP", "Microsoft Excel", "Microsoft Word"],
     },
   ];

@@ -9,8 +9,9 @@ export default function HeroSection() {
           </h1>
           <h2 className="text-xl md:text-2xl">A Fullstack Website Developer</h2>
           <p className="text-base md:text-lg">
-            "...specializing in backend development using NestJS and Express.js,
-            with strong fundamentals in Next.js for frontend development."
+            "...specializing in backend development using Express.js and
+            Nest.js, with strong fundamentals in React.js, especially Next.js
+            for frontend development."
           </p>
         </div>
 
