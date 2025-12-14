@@ -16,7 +16,20 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Lomona Gagasi Pasaribu",
-  description: "A Portofolio Website",
+  description:
+    "Portfolio of Lomona Gagasi Pasaribu, Fullstack Developer specializing in Node.js, Express.js, Nest.js, React.js, and Next.js",
+  keywords: [
+    "Fullstack Developer Indonesia",
+    "Freelancer",
+    "Lomona Gagasi Pasaribu",
+    "Backend Developer",
+    "Node.js Developer",
+    "Software Engineer",
+    "Nest.js Developer",
+    "Express.js Backend Engineer",
+    "Next.js Developer",
+    "React.js Developer",
+  ],
 };
 
 export default function RootLayout({

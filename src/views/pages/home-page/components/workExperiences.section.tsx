@@ -14,7 +14,7 @@ export default function WorkExperiencesSection() {
       description:
         "Developed and maintained scalable backend services using Express.js and Node.js. Optimized PostgreSQL databases with Sequalize, built and tested RESTful APIs. Implemented unit tests with Mocha and collaborated using Git and GitHub for version control.",
       // image: "/pt-bithealth-teknologi-pintar.png", // Add your image path here
-      image: "/bithealth-logo.jpg", // Add your image path here
+      image: "/bithealth.png", // Add your image path here
       skills: [
         "JavaScript",
         "Express.js",
