@@ -32,11 +32,7 @@ export default function Footer() {
 
           {/* Social Media Icons */}
           <div className="flex space-x-4 mt-4 md:mt-0">
-            <a
-              href="https://wa.me/62895701188728"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="" target="_blank" rel="noopener noreferrer">
               <img
                 src="/whatsapp-icon.svg"
                 alt="WhatsApp"
